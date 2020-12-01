@@ -25,7 +25,7 @@ s="""
 
 def p8(n): 
     tmp3 = 0
-    for i in range(0,len(s)-12):
+    for i in range(0,len(s)-(n-1)):
         tmp1 = [int(x) for x in s[i:i+n]]
         tmp2 = reduce((lambda x, y: x * y), tmp1)
         if tmp2 > tmp3:
