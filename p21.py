@@ -10,20 +10,25 @@ def prop_div(n):
       tmp.append(n//i)
   return tmp
 
+def list_sum(lst):
+  return reduce(lambda a,b : a+b,lst)
+
+def aliquot_sum(n):
+   if n == 1:
+     return 0
+   elif n == 2:
+     return 1
+   elif n > 2:
+     d0 = prop_div(n)
+     a = list_sum(d0)
+     return a
+
 def is_amicable(n):
   #print(n)
   r = False
-  d0 = prop_div(n)
-  a = None
-  b = None
-  if len(d0) > 0:
-    a = reduce(lambda a,b : a+b,d0)
-    print(d0,a)
-    d1 = prop_div(a)
-    if len(d1) > 0:
-      b = reduce(lambda a,b : a+b,d1)
-      print(d1,b)
-      r = (n == b != a)
+  a = aliquot_sum(n)
+  b = aliquot_sum(a)
+  r = (n == b != a)
   print(n,a,b,n==a,n==b)
   return r
 
@@ -49,7 +54,7 @@ def test():
   print(is_amicable(496))
   print(is_amicable(8128))
 
-
-print(p21(10**4))
+if __name__ == "__main__":
+  print(p21(10**4))
 
 
