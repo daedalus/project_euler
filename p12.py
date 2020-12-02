@@ -1,5 +1,5 @@
 def T(n):
-  return (n*(n+1))//2
+  return (n*(n+1))//2 # https://en.wikipedia.org/wiki/Triangular_number
 
 def cfac(num):
   i = 2
