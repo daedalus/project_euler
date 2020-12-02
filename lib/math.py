@@ -72,3 +72,12 @@ def is_abundant_number(n):
 
 def is_deficient_number(n):
   return aliquot_sum(n) < n
+
+def fib(n):
+  a = 0
+  b = 1 
+  for i in range(0,n):
+    c = b + a
+    a = b
+    b = c
+  return a
