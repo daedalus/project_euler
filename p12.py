@@ -21,5 +21,6 @@ def p12(l):
       break
   return num
 
-print(p12(500))
+if __name__ == "__main__":
+  print(p12(500))
 
