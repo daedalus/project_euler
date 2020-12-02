@@ -1,6 +1,6 @@
 from gmpy2 import is_prime
 from functools import reduce
-
+from itertools import product
 
 def prime_sieve(l):
   primes = [2]
@@ -48,6 +48,10 @@ def list_prod(lst):
     return reduce((lambda x, y: x * y), lst)
 
 
+def cartesian_product(a,b):
+  return list(product(a,b))
+
+
 def aliquot_sum(n):
    if n == 1:
      return 0
@@ -81,3 +85,25 @@ def fib(n):
     a = b
     b = c
   return a
+
+
+def find_coeffs_for_equler_quadratic(l):
+  max_n = 0
+  max_a = 0
+  max_b = 0
+  for a in range(-l,l):
+    for b in range(-l,l):
+      c = True
+      n=-1
+      while c:
+        n += 1
+        fx = n**2 + a*n + b
+        c = is_prime(fx)
+        if n > max_n:
+          max_n = n
+          max_a = a
+          max_b = b
+    print(max_n,max_a,max_b)
+
+  return max_n,max_a,max_b
+
