@@ -113,3 +113,7 @@ def find_coeffs_for_equler_quadratic(l):
 
   return max_n,max_a,max_b
 
+
+def champernowne_constant_digits(g):
+  return [int(d) for n in range(g) for d in str(n)]
+
