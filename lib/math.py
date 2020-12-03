@@ -117,3 +117,11 @@ def find_coeffs_for_equler_quadratic(l):
 def champernowne_constant_digits(g):
   return [int(d) for n in range(g) for d in str(n)]
 
+
+def cycleLength(a,b):
+  k = 0;
+  a = a * 10 % b
+  while (a != 1):
+    a = a * 10 % b;
+    k+=1
+  return k
