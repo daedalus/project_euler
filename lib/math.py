@@ -74,8 +74,14 @@ def is_perfect_number(n):
 def is_abundant_number(n):
   return aliquot_sum(n) > n
 
+
 def is_deficient_number(n):
   return aliquot_sum(n) < n
+
+
+def num_to_digits(n):
+  return list(map(int,list(str(n))))
+
 
 def fib(n):
   a = 0
