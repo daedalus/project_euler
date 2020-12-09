@@ -125,3 +125,24 @@ def cycleLength(a,b):
     a = a * 10 % b;
     k+=1
   return k
+
+
+def is_pandigital(N):
+  m = 987654321
+  sm = list(str(m))
+  S = sorted(str(N))
+  if '0' not in S:
+    f = True
+    for d in sm:
+      if d not in S:
+        f = False
+        break
+      else:
+        if S.count(d) > 1:
+          f = False
+          break
+    return f
+  else:
+    return False
+
+
