@@ -25,8 +25,9 @@ def is_palindrome(n):
 def count_proper_divisors_fast_plus_num(num):
   i = 2
   k = 2
-  while i <= num//i:
+  while i < num//i:
      if num % i == 0:
+       #print(num,i)
        k += 2
      i += 1
   return k
@@ -37,6 +38,21 @@ def proper_divisors(n):
   for i in range(2,n+1):
     if n % i == 0:
       tmp.append(n//i)
+  return tmp
+
+
+def proper_divisors_fast(num):
+  i = 2
+  tmp = [1,num]
+  while i < isqrt(num)+1:
+     #if 1 < i < num:
+     if num % i == 0:
+       #print(num,i)
+       if i != num//i:
+         tmp += [i,num//i]
+       else:
+         tmp += [i]
+     i += 1
   return tmp
 
 
