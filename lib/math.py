@@ -143,9 +143,8 @@ def cycleLength(a,b):
   return k
 
 
-def is_pandigital(N):
-  m = 987654321
-  sm = list(str(m))
+def is_pandigital(N,n=9):
+  sm = list(range(1,n+1))
   S = sorted(str(N))
   if '0' not in S:
     f = True
