@@ -144,22 +144,13 @@ def cycleLength(a,b):
 
 
 def is_pandigital(N,n=9):
-  sm = list(range(1,n+1))
-  S = sorted(str(N))
-  if '0' not in S:
-    f = True
-    for d in sm:
-      if d not in S:
-        f = False
-        break
-      else:
-        if S.count(d) > 1:
-          f = False
-          break
-    return f
-  else:
-    return False
-
+  #sm = list(map(str,(range(1,n+1))))
+  #S = sorted(str(N))
+  #return all([s in sm for s in S])
+  sm = "".join(list(map(str,range(1,n+1))))
+  S = "".join(sorted(str(N)))
+  #print(S,sm)
+  return S == sm
 
 def triangular_number(n):
   return n*(n+1)*0.5
