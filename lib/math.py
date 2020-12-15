@@ -163,3 +163,15 @@ def is_pandigital(N,n=9):
 
 def triangular_number(n):
   return n*(n+1)*0.5
+
+  
+def is_truncatable_prime(n):
+  s = str(n)
+  for i in range(1,len(s)):
+    s1 = int(s[0:i])
+    s2 = int(s[i:len(s)])
+    a = is_prime(s1)
+    b = is_prime(s2)
+    if a == False or b == False:
+      return False
+  return True
