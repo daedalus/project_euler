@@ -1,4 +1,4 @@
-from gmpy2 import is_prime
+from gmpy2 import is_prime,isqrt
 from functools import reduce
 from itertools import product
 
@@ -143,11 +143,11 @@ def cycleLength(a,b):
   return k
 
 
-def is_pandigital(N,n=9):
+def is_pandigital(N,s=1,n=9):
   #sm = list(map(str,(range(1,n+1))))
   #S = sorted(str(N))
   #return all([s in sm for s in S])
-  sm = "".join(list(map(str,range(1,n+1))))
+  sm = "".join(list(map(str,range(s,n+1))))
   S = "".join(sorted(str(N)))
   #print(S,sm)
   return S == sm
