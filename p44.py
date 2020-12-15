@@ -7,10 +7,8 @@ def F(x,y):
   return z1,z2
 
 def p44(x):
-  #y = 1
-  c=0
-  while x>0:
-  #for y in range(1,20):
+  c = 0
+  while x > 0:
     for y in range(1,x):
       s,d = F(x,y)
       S = pentagonal_number(s)
@@ -20,10 +18,7 @@ def p44(x):
       print(c,(x,y,s,d),(X,Y,S,D))
       if D == X - Y and S == X + Y:
         return D
-      #if D > 1:
-      #  return D
       c+=1
     x+=1
 
 print(p44(1))
-#print(F(4,7))
