@@ -161,3 +161,5 @@ def is_pandigital(N,n=9):
     return False
 
 
+def triangular_number(n):
+  return n*(n+1)*0.5
