@@ -25,7 +25,7 @@ def F(x):
   P = pentagonal_number(y)
   H = hexagonal_number(z)
   if T == P == H:
-      return T
+      return H
   else:
       return False
 
