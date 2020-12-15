@@ -152,10 +152,18 @@ def is_pandigital(N,s=1,n=9):
   #print(S,sm)
   return S == sm
 
-def triangular_number(n):
-  return n*(n+1)*0.5
 
-  
+def triangular_number(n):
+  return n*(n+1)//2
+
+
+def pentagonal_number(n):
+  return n*((3*n)-1)//2
+
+
+def hexagonal_number(n):
+  return n*((2*n)-1)
+
 def is_truncatable_prime(n):
   s = str(n)
   for i in range(1,len(s)):
