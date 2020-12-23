@@ -43,7 +43,7 @@ def proper_divisors(n):
 
 def proper_divisors_fast(num):
   i = 2
-  tmp = [1,num]
+  tmp = [1]
   while i < isqrt(num)+1:
      #if 1 < i < num:
      if num % i == 0:
@@ -143,34 +143,42 @@ def cycleLength(a,b):
   return k
 
 
-def is_pandigital(N,s=1,n=9):
-  #sm = list(map(str,(range(1,n+1))))
-  #S = sorted(str(N))
-  #return all([s in sm for s in S])
-  sm = "".join(list(map(str,range(s,n+1))))
-  S = "".join(sorted(str(N)))
-  #print(S,sm)
-  return S == sm
+def is_pandigital(N):
+  m = 987654321
+  sm = list(str(m))
+  S = sorted(str(N))
+  if '0' not in S:
+    f = True
+    for d in sm:
+      if d not in S:
+        f = False
+        break
+      else:
+        if S.count(d) > 1:
+          f = False
+          break
+    return f
+  else:
+    return False
 
 
-def triangular_number(n):
-  return n*(n+1)//2
+def is_lychrel_number(n,l=50):
+  def base(n):
+    n1 = int(str(n)[::-1])
+    tmp = n+n1
+    #print("base",n,n1,tmp)
+    if is_palindrome(tmp):
+      return True,tmp
+    else:
+      return False,tmp
+  c = 0 
+  work = n
+  while c < l:  
+    s,tmp = base(work)
+    if s == True:
+      return True
+    else:
+      work = tmp
+    c += 1
+  return s 
 
-
-def pentagonal_number(n):
-  return n*((3*n)-1)//2
-
-
-def hexagonal_number(n):
-  return n*((2*n)-1)
-
-def is_truncatable_prime(n):
-  s = str(n)
-  for i in range(1,len(s)):
-    s1 = int(s[0:i])
-    s2 = int(s[i:len(s)])
-    a = is_prime(s1)
-    b = is_prime(s2)
-    if a == False or b == False:
-      return False
-  return True
